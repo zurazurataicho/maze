@@ -8,16 +8,23 @@
 #define WALL 1
 
 int map[WIDTH][HEIGHT];
-int dir_x[] = {0, 0, -1, 1};  /* 上,下,左,右 */
-int dir_y[] = {-1, 1, 0, 0};
+struct {
+    int x;
+    int y;
+} dir[] = {
+    {0, -1}, /** UP */
+    {0, 1},  /** DOWN */
+    {-1, 0}, /** LEFT */
+    {1, 0}   /** RIGHT */
+};
 
 void make_maze(int x, int y)
 {
     int d = rand() % 4;
     int dd = d;
     while (1) {
-        int px = x+dir_x[d]*2;
-        int py = y+dir_y[d]*2;
+        int px = x+dir[d].x*2;
+        int py = y+dir[d].y*2;
         if (px < 0 || px >= WIDTH || py < 0 || py >= HEIGHT || map[px][py] != WALL) {
             d++;
             if (d == 4)
@@ -26,7 +33,7 @@ void make_maze(int x, int y)
                 return;
             continue;
         }
-        map[x+dir_x[d]][y+dir_y[d]] = ROAD;
+        map[x+dir[d].x][y+dir[d].y] = ROAD;
         map[px][py] = ROAD;
         make_maze(px, py);
         d = dd = rand() % 4;
