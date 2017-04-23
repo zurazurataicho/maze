@@ -2,10 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-//#define WIDTH 59 /** gt or eq 5 */
-//#define HEIGHT 25 /** gt or eq 5 */
-#define WIDTH 9 /** gt or eq 5 */
-#define HEIGHT 9 /** gt or eq 5 */
+#define WIDTH 59 /** gt or eq 5 */
+#define HEIGHT 25 /** gt or eq 5 */
 #define ROAD 0
 #define WALL 1
 
