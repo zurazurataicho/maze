@@ -4,8 +4,8 @@
 
 //#define WIDTH 59 /** gt or eq 5 */
 //#define HEIGHT 25 /** gt or eq 5 */
-#define WIDTH 51 /** gt or eq 5 */
-#define HEIGHT 11 /** gt or eq 5 */
+#define WIDTH 9 /** gt or eq 5 */
+#define HEIGHT 9 /** gt or eq 5 */
 #define ROAD 0
 #define WALL 1
 
@@ -54,8 +54,8 @@ int rand_odd(int mod)
 
 void maze()
 {
-    int x = rand_odd(WIDTH - 3);
-    int y = rand_odd(HEIGHT - 3);
+    int x = rand_odd(WIDTH - 2);
+    int y = rand_odd(HEIGHT - 2);
     printf("(%d, %d)\n", x, y);
     make_maze(x, y);
 }
