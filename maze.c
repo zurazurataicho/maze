@@ -42,7 +42,7 @@ void make_maze(int x, int y)
 
 int rand_odd(int mod)
 {
-    int r = 2 + rand() % mod;
+    int r = 1 + rand() % mod;
     if (r % 2 == 0)
         r++;
     if (r > mod)
